@@ -1,0 +1,946 @@
+{
+  "categories": ["coffee", "equipment", "roasting"],
+  "itemCount": 20,
+  "list": [
+    {
+      "id": "prod_c_001",
+      "title": "Ethiopian Yirgacheffe Grade 1",
+      "shortName": "Yirgacheffe Floral",
+      "description": "A light roast with distinct floral notes of jasmine and bright acidity. Perfect for pour-over enthusiasts.",
+      "price": 24,
+      "discount": 0,
+      "category": "coffee",
+      "isBestSeller": true,
+      "reviews": [
+        {
+          "customerName": "Margaret W.",
+          "description": "Absolutely stunning floral aroma. The best beans I've bought this year.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Daniel R.",
+          "description": "A bit too acidic for my taste, tasted almost like lemon juice. Clearly high quality, just not for me.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Kevin Chen",
+          "description": "Brewed this in my Chemex and the jasmine notes were incredible.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Amanda J.",
+          "description": "Good beans, but slightly uneven roast compared to the last batch.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Patricia N.",
+          "description": "Very tea-like body. If you like heavy coffee, skip this. If you like complexity, buy it.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Michael T.",
+          "description": "Way too sour for my morning routine.",
+          "reviewStars": 2
+        },
+        {
+          "customerName": "Elena Rodriguez",
+          "description": "The blueberry finish is subtle but definitely there.",
+          "reviewStars": 4
+        }
+      ]
+    },
+    {
+      "id": "prod_c_002",
+      "title": "Sumatra Mandheling Reserve",
+      "shortName": "Sumatra Dark",
+      "description": "Full-bodied, earthy, and low acidity. Deep herbal notes with a smooth chocolate finish.",
+      "price": 22,
+      "discount": 0.15,
+      "category": "coffee",
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": "Marcus Thompson",
+          "description": "Exactly the bold, earthy flavor I was looking for.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Lydia Henderson",
+          "description": "A bit too muddy for my taste, lacked clarity.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Robert F.",
+          "description": "Perfect for French Press. Thick and syrupy.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Jennifer K.",
+          "description": "Low acid is a lifesaver for my stomach. Love it.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Thomas C.",
+          "description": "Tasted a bit burnt rather than roasted.",
+          "reviewStars": 2
+        },
+        {
+          "customerName": "Xavier Nguyen",
+          "description": "Rich dark chocolate notes, great with milk.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Amanda Brooks",
+          "description": "My go-to morning coffee. Strong and wakes you up.",
+          "reviewStars": 5
+        }
+      ]
+    },
+    {
+      "id": "prod_e_003",
+      "title": "Precision Burr Grinder X1",
+      "shortName": "Burr Grinder",
+      "description": "Stainless steel conical burrs ensure a consistent grind size for everything from Espresso to French Press.",
+      "price": 145,
+      "discount": 0,
+      "category": "equipment",
+      "isBestSeller": true,
+      "reviews": [
+        {
+          "customerName": "Sarah Lawson",
+          "description": "Grinds evenly, but the motor is a bit louder than I expected.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Michael Reyes",
+          "description": "Game changer for my morning routine. Worth every penny.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Brian K.",
+          "description": "Retention is high, I have to tap it a lot to get all the grounds out.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Jessica Alvarez",
+          "description": "Beautiful design on my counter and the grind consistency is top notch.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "William G.",
+          "description": "Stopped working after 6 months. Customer service was slow.",
+          "reviewStars": 1
+        },
+        {
+          "customerName": "Nathan H.",
+          "description": "Great for pour over, struggles a bit with fine espresso.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Laura Mitchell",
+          "description": "Easy to clean and assemble.",
+          "reviewStars": 5
+        }
+      ]
+    },
+    {
+      "id": "prod_c_004",
+      "title": "Colombian Supremo Huila",
+      "shortName": "Colombia Nutty",
+      "description": "The classic breakfast coffee. Medium roast with notes of caramel, walnut, and red apple.",
+      "price": 19,
+      "discount": 0,
+      "category": "coffee",
+      "isBestSeller": true,
+      "reviews": [
+        {
+          "customerName": "Evan Patterson",
+          "description": "Solid coffee, but nothing exciting. Good for daily drinking.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Brenda S.",
+          "description": "Very consistent. I buy this every month.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Gary Sullivan",
+          "description": "Smooth, nutty, no bitter aftertaste.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Diane L.",
+          "description": "Bought this for the office, everyone loves it.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Kyle Anderson",
+          "description": "A bit stale when it arrived.",
+          "reviewStars": 2
+        },
+        {
+          "customerName": "Nancy Whitfield",
+          "description": "Classic Colombian taste. Can't go wrong.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Peter J.",
+          "description": "Great price for the quality.",
+          "reviewStars": 5
+        }
+      ]
+    },
+    {
+      "id": "prod_r_005",
+      "title": "Raw Green Beans: Kenya AA",
+      "shortName": "Green Kenya AA",
+      "description": "Premium unroasted green beans for home roasting enthusiasts. High density and massive flavor potential.",
+      "price": 15,
+      "discount": 0,
+      "category": "roasting",
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": "Robert M.",
+          "description": "Clean beans, very few defects. Roasted to a City+ and it was perfect.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Gregory Hall",
+          "description": "High moisture content, took a while to reach first crack.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Sarah Dunham",
+          "description": "Produced a lovely bright cup. Will buy again.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "David N.",
+          "description": "Too many quakers in the bag.",
+          "reviewStars": 2
+        },
+        {
+          "customerName": "Anthony P.",
+          "description": "Excellent size consistency.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Maria V.",
+          "description": "Hard to roast evenly for a beginner, but that's on me.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Elizabeth Turner",
+          "description": "Great packaging, beans stayed fresh.",
+          "reviewStars": 5
+        }
+      ]
+    },
+    {
+      "id": "prod_e_006",
+      "title": "V60 Ceramic Dripper 02",
+      "shortName": "Ceramic Dripper",
+      "description": "The standard for manual brewing. Spiraled ribs allows for maximum coffee expansion.",
+      "price": 28,
+      "discount": 0.3,
+      "category": "equipment",
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": "Jennifer Wang",
+          "description": "Arrived chipped, had to return it. Replacement works fine.",
+          "reviewStars": 2
+        },
+        {
+          "customerName": "Thomas H.",
+          "description": "Keeps heat well, makes a clean cup.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Christine D.",
+          "description": "Looks great on the shelf and easy to clean.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Steve Nakamura",
+          "description": "The flow rate is perfect.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Rebecca P.",
+          "description": "I broke it within a week. Get the plastic one if you're clumsy.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Brandon Lee",
+          "description": "Essential tool for any coffee lover.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Karen Mitchell",
+          "description": "Too small for my large mug.",
+          "reviewStars": 3
+        }
+      ]
+    },
+    {
+      "id": "prod_c_007",
+      "title": "Midnight Espresso Blend",
+      "shortName": "Espresso Blend",
+      "description": "A mix of Brazilian and Vietnamese beans designed for thick crema and a punchy caffeine kick.",
+      "price": 20,
+      "discount": 0.25,
+      "category": "coffee",
+      "isBestSeller": true,
+      "reviews": [
+        {
+          "customerName": "Michelle F.",
+          "description": "Cuts through milk perfectly in my cappuccino.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Joseph Castellano",
+          "description": "Great crema production, looks amazing in the cup.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Caroline B.",
+          "description": "A little too bitter for a straight shot.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Derek W.",
+          "description": "This stuff is strong! Love the caffeine kick.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Sasha Petrova",
+          "description": "Good value blend.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Jonathan R.",
+          "description": "Lacks nuance, it's just a punch in the face.",
+          "reviewStars": 2
+        },
+        {
+          "customerName": "Heather Simmons",
+          "description": "Easy to dial in on my machine.",
+          "reviewStars": 4
+        }
+      ]
+    },
+    {
+      "id": "prod_e_008",
+      "title": "Gooseneck Variable Kettle",
+      "shortName": "Digital Kettle",
+      "description": "Precise temperature control and a thin spout for exact pouring control.",
+      "price": 85,
+      "discount": 0,
+      "category": "equipment",
+      "isBestSeller": true,
+      "reviews": [
+        {
+          "customerName": "Marco Espinoza",
+          "description": "Heats up fast and holds temp perfectly.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "James O.",
+          "description": "Buttons feel a bit cheap.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Andrew Kim",
+          "description": "The flow control is unmatched.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Linda Cheng",
+          "description": "Also great for tea since you can set lower temps.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Richard M.",
+          "description": "Display died after a month.",
+          "reviewStars": 1
+        },
+        {
+          "customerName": "Olivia Barnes",
+          "description": "Looks sleek in matte black.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Timothy Grant",
+          "description": "Takes a while to boil if filled to max.",
+          "reviewStars": 3
+        }
+      ]
+    },
+    {
+      "id": "prod_r_009",
+      "title": "Home Drum Roaster Kit",
+      "shortName": "Drum Roaster",
+      "description": "An entry-level motorized drum roaster for stovetops. Roasts up to 300g at a time.",
+      "price": 250,
+      "discount": 0.4,
+      "category": "roasting",
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": "David Collins",
+          "description": "Hard to control the heat, burned my first two batches.",
+          "reviewStars": 2
+        },
+        {
+          "customerName": "Raymond T.",
+          "description": "Fun project, but requires patience.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "George Morales",
+          "description": "Good for learning, but you will outgrow it fast.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Sandra K.",
+          "description": "Once you get the hang of it, the results are great.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Frank Deluca",
+          "description": "The motor is a bit weak for a full 300g load.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Melissa Y.",
+          "description": "Best option for this price range.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Paul Henderson",
+          "description": "Smokes up the kitchen, use good ventilation!",
+          "reviewStars": 4
+        }
+      ]
+    },
+    {
+      "id": "prod_c_010",
+      "title": "Costa Rica Tarrazu",
+      "shortName": "Tarrazu Honey",
+      "description": "Honey processed beans yielding a sweet, complex body with hints of brown sugar.",
+      "price": 26,
+      "discount": 0,
+      "category": "coffee",
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": "Angela Foster",
+          "description": "Incredibly sweet even without sugar. My favorite.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Donald J.",
+          "description": "Very balanced cup.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Barbara Simmons",
+          "description": "Smooth and gentle on the stomach.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Edward B.",
+          "description": "It was okay, expected more complexity.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Christina Lopez",
+          "description": "Love the processing method, unique flavor.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Rachel Adams",
+          "description": "Packaging is beautiful, makes a great gift.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Vincent R.",
+          "description": "Overpriced for what it is.",
+          "reviewStars": 2
+        }
+      ]
+    },
+    {
+      "id": "prod_e_011",
+      "title": "Classic French Press",
+      "shortName": "Glass Press",
+      "description": "Heat-resistant borosilicate glass with a triple-screen filter system.",
+      "price": 35,
+      "discount": 0.5,
+      "category": "equipment",
+      "isBestSeller": true,
+      "reviews": [
+        {
+          "customerName": "Harold W.",
+          "description": "Simple, effective, and easy to clean.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Stephanie Moore",
+          "description": "Glass is very thin, broke in the sink.",
+          "reviewStars": 2
+        },
+        {
+          "customerName": "Martin Garcia",
+          "description": "The triple filter really keeps the sludge out.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Carol Franklin",
+          "description": "Makes the best full-bodied coffee.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Alicia H.",
+          "description": "Dishwasher safe, which is a huge plus.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Ryan M.",
+          "description": "I prefer stainless steel, keeps coffee hotter.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Justin P.",
+          "description": "Cheap and does the job.",
+          "reviewStars": 4
+        }
+      ]
+    },
+    {
+      "id": "prod_c_012",
+      "title": "Decaf Mountain Water Process",
+      "shortName": "Decaf Mexico",
+      "description": "Chemical-free decaffeination. Notes of cinnamon and chocolate. You won't believe it's decaf.",
+      "price": 21,
+      "discount": 0,
+      "category": "coffee",
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": "Denise Warren",
+          "description": "Finally a decaf that doesn't taste like cardboard!",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Katherine L.",
+          "description": "I can drink this at 9pm and sleep like a baby.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Benjamin Shaw",
+          "description": "A bit weak compared to regular beans, but good.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Stanley T.",
+          "description": "Still has that weird decaf aftertaste.",
+          "reviewStars": 2
+        },
+        {
+          "customerName": "Nicole Brennan",
+          "description": "Saved my life during pregnancy.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Christopher D.",
+          "description": "Excellent chocolate notes.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Samantha R.",
+          "description": "My guests didn't know it was decaf.",
+          "reviewStars": 5
+        }
+      ]
+    },
+    {
+      "id": "prod_r_013",
+      "title": "Raw Green Beans: Brazil Santos",
+      "shortName": "Green Santos",
+      "description": "A forgiving bean for beginner roasters. Naturally low acidity and nutty flavor profile.",
+      "price": 12,
+      "discount": 0.2,
+      "category": "roasting",
+      "isBestSeller": true,
+      "reviews": [
+        {
+          "customerName": "Jason Morris",
+          "description": "Great price for practicing. Hard to mess this one up.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Douglas A.",
+          "description": "Very nutty flavor, great for blending.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Phillip Carlson",
+          "description": "A bit boring on its own, needs to be blended.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Virginia H.",
+          "description": "I buy this in bulk, consistent quality.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Craig Peterson",
+          "description": "Produces a lot of chaff during roasting.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Deborah Santiago",
+          "description": "Takes a dark roast very well.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Scott B.",
+          "description": "Unbeatable value.",
+          "reviewStars": 5
+        }
+      ]
+    },
+    {
+      "id": "prod_c_014",
+      "title": "Guatemala Antigua Volcanic",
+      "shortName": "Antigua Smoky",
+      "description": "Grown in volcanic soil, this coffee has a spicy, smoky character with a heavy body.",
+      "price": 23,
+      "discount": 0,
+      "category": "coffee",
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": "Russell F.",
+          "description": "Rich and spicy. A wonderful afternoon cup.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Monica Jensen",
+          "description": "The smoky flavor is distinct and delicious.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Melanie C.",
+          "description": "Too intense for me.",
+          "reviewStars": 2
+        },
+        {
+          "customerName": "Chef Andre L.",
+          "description": "Pairs perfectly with a chocolate dessert.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Gloria Ramirez",
+          "description": "Authentic Antigua flavor.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Kenneth W.",
+          "description": "Bag ripped during shipping.",
+          "reviewStars": 1
+        },
+        {
+          "customerName": "Janet Cooper",
+          "description": "Good body, low acid.",
+          "reviewStars": 4
+        }
+      ]
+    },
+    {
+      "id": "prod_e_015",
+      "title": "Digital Coffee Scale",
+      "shortName": "Precision Scale",
+      "description": "Measures down to 0.1g with a built-in timer for pour-over accuracy.",
+      "price": 45,
+      "discount": 0.3,
+      "category": "equipment",
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": "Alex Tran",
+          "description": "Display is dim and hard to read in sunlight.",
+          "reviewStars": 2
+        },
+        {
+          "customerName": "Steven Diaz",
+          "description": "Accurate enough for the price.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Teresa M.",
+          "description": "There is a delay in the weight reading, annoying for espresso.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Jonathan Hart",
+          "description": "Love the built-in timer function.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Diana K.",
+          "description": "Eats batteries like crazy.",
+          "reviewStars": 2
+        },
+        {
+          "customerName": "Aaron Burke",
+          "description": "Good starter scale.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Natalie Ross",
+          "description": "Not waterproof, be careful!",
+          "reviewStars": 3
+        }
+      ]
+    },
+    {
+      "id": "prod_c_016",
+      "title": "Cold Brew Coarse Blend",
+      "shortName": "Cold Brew",
+      "description": "Pre-ground coarse blend specifically roasted to be steeped cold for 24 hours.",
+      "price": 18,
+      "discount": 0,
+      "category": "coffee",
+      "isBestSeller": true,
+      "reviews": [
+        {
+          "customerName": "Brittany Cole",
+          "description": "Makes a super smooth concentrate.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Derek Palmer",
+          "description": "Love that it comes pre-ground coarse. Saves me time.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Courtney L.",
+          "description": "Chocolatey and zero bitterness.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Patrick Flynn",
+          "description": "I prefer grinding my own beans fresh.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Ashley Martinez",
+          "description": "Add some oat milk and it's heaven.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Ronald G.",
+          "description": "Wish it came in larger bags.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Cynthia Howard",
+          "description": "Found it a bit bitter, maybe I steeped too long.",
+          "reviewStars": 3
+        }
+      ]
+    },
+    {
+      "id": "prod_r_017",
+      "title": "Infrared Thermometer Gun",
+      "shortName": "Temp Gun",
+      "description": "Essential for checking bean temperature during the roasting process.",
+      "price": 30,
+      "discount": 0,
+      "category": "roasting",
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": "Wayne Schultz",
+          "description": "Works instantly. Very helpful.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Carla P.",
+          "description": "Seems to be off by a few degrees compared to my probe.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Nicholas Stone",
+          "description": "I use this for my pizza oven too!",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Gerald T.",
+          "description": "Feels plasticky but works.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Vanessa Cruz",
+          "description": "Laser pointer helps aim.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Arthur K.",
+          "description": "Arrived with a cracked screen.",
+          "reviewStars": 1
+        },
+        {
+          "customerName": "Leslie Morgan",
+          "description": "Instant readings, good response time.",
+          "reviewStars": 4
+        }
+      ]
+    },
+    {
+      "id": "prod_c_018",
+      "title": "Blue Mountain Style Blend",
+      "shortName": "Blue Mtn Style",
+      "description": "A recreation of the famous Jamaica Blue Mountain flavor profile at a fraction of the cost.",
+      "price": 35,
+      "discount": 0,
+      "category": "coffee",
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": "Charles Whitman",
+          "description": "Good attempt, but lacks the true silkiness of the real thing.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Tiffany N.",
+          "description": "For the price, this is an amazing cup of coffee.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Lawrence J.",
+          "description": "Close enough to bring back memories of my trip.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Irene Blake",
+          "description": "Just marketing hype. It's a standard mild blend.",
+          "reviewStars": 2
+        },
+        {
+          "customerName": "Oscar Fernandez",
+          "description": "Very smooth, zero bite.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Hannah Young",
+          "description": "Got this as a gift, loved it.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Matthew S.",
+          "description": "Tasty but expensive.",
+          "reviewStars": 4
+        }
+      ]
+    },
+    {
+      "id": "prod_e_019",
+      "title": "AeroPress Coffee Maker",
+      "shortName": "Travel Brewer",
+      "description": "The ultimate travel coffee maker. Indestructible, fast, and makes a very clean cup.",
+      "price": 40,
+      "discount": 0,
+      "category": "equipment",
+      "isBestSeller": true,
+      "reviews": [
+        {
+          "customerName": "Victor Oduya",
+          "description": "I take this camping everywhere. Best invention ever.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Eugene Richards",
+          "description": "It doesn't make real espresso, but the coffee is strong.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Catherine D.",
+          "description": "Too many parts to keep track of.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Janice Perry",
+          "description": "Makes the cleanest cup of coffee I've ever had.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Henry Cho",
+          "description": "Use the inverted method for best results!",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Louise A.",
+          "description": "Don't like brewing in plastic.",
+          "reviewStars": 2
+        },
+        {
+          "customerName": "Sean O'Brien",
+          "description": "Fastest way to make a single cup.",
+          "reviewStars": 5
+        }
+      ]
+    },
+    {
+      "id": "prod_c_020",
+      "title": "Monsoon Malabar",
+      "shortName": "Malabar India",
+      "description": "Exposed to monsoon rains and winds, resulting in a low-acid, heavy-bodied, unique spicy flavor.",
+      "price": 24,
+      "discount": 0,
+      "category": "coffee",
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": "Gregory Patel",
+          "description": "Very unique taste. A bit musty, but in a good way.",
+          "reviewStars": 4
+        },
+        {
+          "customerName": "Sharon E.",
+          "description": "Tastes like old socks. Not for me.",
+          "reviewStars": 1
+        },
+        {
+          "customerName": "Howard Singh",
+          "description": "Love the spicy notes, very different from African coffees.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Donna Campbell",
+          "description": "The lowest acidity coffee I've ever found.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Ricardo Mendes",
+          "description": "Produces amazing crema in espresso blends.",
+          "reviewStars": 5
+        },
+        {
+          "customerName": "Pamela Jacobs",
+          "description": "Interesting to try once, but wouldn't drink daily.",
+          "reviewStars": 3
+        },
+        {
+          "customerName": "Norman Fischer",
+          "description": "Reminds me of coffee I had in Europe.",
+          "reviewStars": 4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+@import './utilities.css';
+
+@theme {
+  /* fonts */
+  --font-quicksand: quicksand;
+  --font-robomono: robotomono;
+
+  /* heights */
+  --height-header: 60px;
+  --height-main: calc(100dvh - var(--height-header));
+  --min-height-main: calc(100dvh - var(--height-header));
+  --max-height-main: calc(100dvh - var(--height-header));
+  --max-width-body: 1500px;
+  --min-width-body: 250px;
+
+  /* colors */
+  --color-brand-dark: #004876;
+  --color-brand-base: #1e71a6;
+  --color-accent-dark: #3b2f2f;
+  --color-accent-base: #6f4336;
+
+  --color-primary: var(--color-brand-dark);
+  --color-secondary: var(--color-accent-base);
+
+  --color-background-root: #ffffff;
+  /* Transitoin durations */
+  --transition-duration-global: 300ms;
+  /* breakpoints */
+  --breakpoint-xsm: 400px;
+  --breakpoint-xxsm: 300px;
+  /* animations */
+  --animate-r-spin: r-spin 1000ms infinite linear;
+  --animate-life-cycle-active: life-cycle-active 500ms;
+  --animate-life-cycle-blink: life-cycle-blink 500ms;
+}
+
+@layer base {
+  :root {
+    interpolate-size: allow-keywords;
+    scroll-behavior: smooth;
+    scrollbar-color: var(--color-primary) var(--background-color-default);
+    font-family: quicksand, cairo, monospace, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    view-transition-name: root;
+
+    --ui-container: 85rem;
+    --ui-header-height: --spacing(20);
+    --ui-footer-height: 50px;
+
+    @apply scrollbar-none sm:[scrollbar-width:thin];
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      view-transition-name: none;
+    }
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    scrollbar-width: thin;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  body {
+    min-width: var(--min-width-body);
+    overflow-x: hidden;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  i {
+    pointer-events: none;
+  }
+}
+
+@layer components {
+}

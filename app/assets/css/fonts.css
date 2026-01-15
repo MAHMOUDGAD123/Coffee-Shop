@@ -1,0 +1,10 @@
+@font-face {
+  font-family: cairo;
+  src: url('/fonts/Cairo.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: quicksand;
+  src: url('/fonts/Quicksand.woff2') format('woff2');
+  font-display: swap;
+}
