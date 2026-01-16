@@ -4,46 +4,34 @@
   import cupImg from '~/assets/imgs/w-cup.webp';
   import carasauImg from '~/assets/imgs/w-carasau.webp';
 
-  interface ImgsCardData {
-    img: string;
-    alt?: string;
-    title: string;
-    description: string;
-  }
+  type WelcomeCardsKeys = 'quantity' | 'easy' | 'taste' | 'quick';
+  type WelcomeCards = { key: WelcomeCardsKeys; img: string }[];
 
-  const cardsData: ImgsCardData[] = [
+  const cardsData: WelcomeCards = [
     {
-      title: 'Quality',
-      description: "Every bean is carefully sourced from the world's finest farms.",
+      key: 'quantity',
       img: seedsImg,
-      alt: 'Coffee seeds',
     },
     {
-      title: 'Easy',
-      description: 'Ordering your perfect brew has never been simpler.',
+      key: 'easy',
       img: cupImg,
-      alt: 'Coffee cup image',
     },
     {
-      title: 'Taste',
-      description: 'Experience rich, bold flavors crafted to perfection in every cup.',
+      key: 'taste',
       img: carasauImg,
-      alt: 'Carasau image',
     },
     {
-      title: 'Quick',
-      description: 'From order to hand in minutes—great coffee without the wait.',
+      key: 'quick',
       img: coffeeImg,
-      alt: 'Coffee seeds image',
     },
   ];
 
-  const mediaQuery = useMediaQuery('(width >= 1024px)');
+  const islargeScreen = useMediaQuery('(width >= 1024px)');
 </script>
 
 <template>
   <div dir="ltr" class="z-0 my-20 grid w-screen grid-cols-1 gap-10 lg:my-60 lg:grid-cols-2">
-    <div class="relative z-1 hidden lg:block" v-if="mediaQuery">
+    <div class="relative z-1 hidden lg:block" v-if="islargeScreen">
       <img
         src="~/assets/imgs/blob.svg"
         alt="blob svg"
@@ -56,13 +44,39 @@
       />
     </div>
 
-    <div class="z-2 flex flex-col items-center justify-center gap-9 px-3 lg:items-start">
+    <div
+      :dir="$i18n.localeProperties.value.dir"
+      class="z-2 flex flex-col items-center justify-center gap-15 px-3 lg:items-start lg:ps-15"
+    >
       <div class="text-center lg:text-start">
-        <h3 class="mb-3 text-4xl font-bold">Welcome To Our Shop</h3>
-        <p class="text-2xl">The coffee you want, when you want it.</p>
+        <h3 class="mb-4 text-4xl font-bold">{{ $t('home.welcome.title') }}</h3>
+        <p class="text-xl">{{ $t('home.welcome.description') }}</p>
       </div>
+
+      <!-- Cards -->
       <div class="mx-5 grid max-w-175 grid-cols-1 gap-6 md:mx-0 md:grid-cols-2">
-        <UiImgCard v-for="(data, i) in cardsData" :data :key="i" class="max-w-none" />
+        <div
+          v-for="card in cardsData"
+          class="xsm:flex-row xsm:text-start flex max-w-100 flex-col items-center gap-3 text-center"
+        >
+          <div
+            class="bg-accent-base flex aspect-square max-w-19 min-w-19 items-center justify-center rounded-full"
+          >
+            <img
+              :src="card.img"
+              :alt="$t(`home.welcome.cards.${card.key}.img_alt`)"
+              class="w-[70%]"
+            />
+          </div>
+          <div class="flex flex-col gap-2">
+            <span class="text-primary text-lg font-bold">{{
+              $t(`home.welcome.cards.${card.key}.title`)
+            }}</span>
+            <span class="max-w-55 text-sm">{{
+              $t(`home.welcome.cards.${card.key}.description`)
+            }}</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -19,7 +19,7 @@
     <div class="absolute top-0 -right-10">
       <img src="~/assets/imgs/coffee-base.svg" alt="coffee" class="-z-1 w-50 opacity-50" />
     </div>
-    <h1 class="text-center text-5xl font-bold sm:text-6xl">Products</h1>
+    <h1 class="text-center text-5xl font-bold sm:text-6xl">{{ $t('text.products') }}</h1>
     <ProductCategoryFilter />
     <ProductGrid />
   </div>

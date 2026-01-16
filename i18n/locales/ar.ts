@@ -1,35 +1,23 @@
+// --- Imports ---
+
+import { cart_ar } from './data/cart';
+import { footer_ar } from './data/footer';
+import { home_page_ar } from './data/home-page';
+import { nav_ar } from './data/nav';
+import { products_ar } from './data/products';
+import { random_text_ar } from './data/text';
+
+// --- English Translation Map ---
+
 export default defineI18nLocale(() => ({
   lang: {
     en: 'الإنجليزية',
     ar: 'العربية',
   },
-  coffee: 'قهوة',
-  home_hero_c: 'م',
-  home_hero_title_top: 'قهى',
-  home_hero_title_bottom: 'ومتجر',
-  home_hero_desc_top: 'إحصل على قهوتك المفضلة.',
-  home_hero_desc_bottom: 'مع خدمة التوصيل إذا أحببت.',
-  home_hero_btn_offer_msg: 'تسوق ٢٠% أقل',
-  home_products_1st_title: 'منتجاتنا',
-  home_products_2nd_title: 'منتجات خاصة لك',
-  cart: 'السلة',
-  cart_empty_title: 'السلة فارغة',
-  cart_empty_desc: 'أضف بعض المنتجات الي السلة',
-  cart_close: 'إغلاق',
-  cart_clear: 'مسح',
-  cart_checkout: 'دفع',
-  cart_checkout_confirm: 'نعم',
-  cart_checkout_reject: 'لا',
-  cart_checkout_confirm_title: 'تأكيد عملية الدفع',
-  cart_checkout_confirm_desc: 'هل أنت متأكد من اتمام عماية الدفع (فكر مرة كمان)؟',
-  cart_checkout_done_title: 'عملية الدفع',
-  cart_checkout_done_desc: 'تمت عملية الدفع بنجاح (ألف مبروك)',
-  cart_add_msg: 'تم الإضافة الي السلة',
-  cart_remove_msg: 'تم الإزالة من السلة',
-  cart_add_btn_msg: 'إضافة الي السلة',
-  cart_remove_btn_msg: 'إزالة من السلة',
-  nav_links: {
-    home: 'الرئيسية',
-    products: 'المنتجات',
-  },
+  text: random_text_ar,
+  home: home_page_ar,
+  cart: cart_ar,
+  nav_links: nav_ar,
+  products: products_ar,
+  footer: footer_ar,
 }));

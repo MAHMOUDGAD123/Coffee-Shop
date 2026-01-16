@@ -37,7 +37,7 @@
     :side="sliderSide"
     :ui="{ footer: 'justify-end', title: 'uppercase' }"
   >
-    <UTooltip :text="$t('cart')">
+    <UTooltip :text="$t('text.cart')">
       <UChip
         size="3xl"
         color="secondary"
@@ -56,7 +56,7 @@
 
     <template #title>
       <div class="flex items-center gap-3">
-        <span>{{ $t('cart') }}</span>
+        <span class="text-xl">{{ $t('text.cart') }}</span>
         <span
           v-if="!cartEmpty"
           class="bg-accent-base content-center rounded-xl px-2 py-0.5 text-center text-white"
@@ -92,40 +92,40 @@
       <UEmpty
         v-else
         icon="mdi:cart-off"
-        :title="$t('cart_empty_title')"
-        :description="$t('cart_empty_desc')"
+        :title="$t('cart.empty_title')"
+        :description="$t('cart.empty_desc')"
       />
     </template>
 
     <template #footer>
       <UButton
-        :label="$t('cart_close')"
+        :label="$t('cart.close')"
         color="neutral"
         variant="subtle"
         @click="cartStore.toggleCartSlider"
       />
 
-      <UButton :label="$t('cart_clear')" color="secondary" @click="cartStore.clearCart" />
+      <UButton :label="$t('cart.clear')" color="secondary" @click="cartStore.clearCart" />
 
       <UModal
         v-model:open="cartConfirmModelOpen"
-        :title="$t('cart_checkout_confirm_title')"
+        :title="$t('cart.checkout_confirm_title')"
         :ui="{ footer: 'justify-end' }"
       >
-        <UButton :label="$t('cart_checkout')" :disabled="cartEmpty" />
+        <UButton :label="$t('cart.checkout')" :disabled="cartEmpty" />
 
         <template #body>
-          <p>{{ $t('cart_checkout_confirm_desc') }}</p>
+          <p>{{ $t('cart.checkout_confirm_desc') }}</p>
         </template>
 
         <template #footer>
           <UButton
-            :label="$t('cart_checkout_reject')"
+            :label="$t('cart.checkout_reject')"
             color="neutral"
             variant="outline"
             @click="cartConfirmModelOpen = false"
           />
-          <UButton :label="$t('cart_checkout_confirm')" @click="cartStore.confirmCheckout" />
+          <UButton :label="$t('cart.checkout_confirm')" @click="cartStore.confirmCheckout" />
         </template>
       </UModal>
     </template>

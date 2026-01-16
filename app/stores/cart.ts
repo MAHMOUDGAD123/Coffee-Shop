@@ -36,7 +36,7 @@ export const useCartStore = defineStore('cart', () => {
       id: product.id,
       icon: isAdded ? 'icon-park-solid:shopping-cart-add' : 'icon-park-solid:shopping-cart-del',
       title: `${product.title}`,
-      description: isAdded ? translate('cart_add_msg') : translate('cart_remove_msg'),
+      description: isAdded ? translate('cart.add_msg') : translate('cart.remove_msg'),
       color: isAdded ? 'primary' : 'warning',
       type: 'foreground',
     });
@@ -73,8 +73,8 @@ export const useCartStore = defineStore('cart', () => {
     toast.add({
       id: Math.random(),
       icon: 'fa7-solid:circle-check',
-      title: translate('cart_checkout_done_title'),
-      description: translate('cart_checkout_done_desc'),
+      title: translate('cart.checkout_done_title'),
+      description: translate('cart.checkout_done_desc'),
       color: 'success',
       type: 'foreground',
     });

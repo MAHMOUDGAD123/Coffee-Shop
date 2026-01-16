@@ -24,7 +24,7 @@
           class="option relative flex items-center justify-center text-[1.3rem] whitespace-nowrap"
           :class="{ 'active text-primary': item.value === currentFilter }"
         >
-          {{ item.label }}
+          {{ $t(`products.filter.${item.value}`) }}
         </span>
       </template>
     </URadioGroup>

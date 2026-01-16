@@ -16,7 +16,9 @@
 
 <template>
   <div class="mt-20">
-    <h2 class="mb-8 border-b pb-4 text-2xl font-bold text-gray-900">Customer Reviews</h2>
+    <h2 class="mb-8 border-b pb-4 text-2xl font-bold text-gray-900">
+      {{ $t('text.customer_reviews') }}
+    </h2>
     <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
       <!-- Reviews Logic Summary -->
       <div class="h-fit rounded-lg border border-gray-200 bg-white p-6 shadow-sm">

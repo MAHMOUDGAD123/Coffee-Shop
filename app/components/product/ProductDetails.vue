@@ -75,7 +75,7 @@
         class="bg-accent-base hover:bg-accent-dark flex w-full flex-1 items-center justify-center space-x-2 rounded-lg px-8 py-3 font-bold text-white shadow-lg shadow-amber-800/20 transition duration-300"
       >
         <UIcon name="uil:cart" class="text-[22px]"></UIcon>
-        <span>{{ product.inCart ? $t('cart_remove_btn_msg') : $t('cart_add_btn_msg') }}</span>
+        <span>{{ product.inCart ? $t('cart.remove_btn_msg') : $t('cart.add_btn_msg') }}</span>
       </UButton>
     </div>
   </div>

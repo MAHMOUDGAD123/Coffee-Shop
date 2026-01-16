@@ -1,35 +1,23 @@
+// --- Imports---
+
+import { cart_en } from './data/cart';
+import { footer_en } from './data/footer';
+import { home_page_en } from './data/home-page';
+import { nav_en } from './data/nav';
+import { products_en } from './data/products';
+import { random_text_en } from './data/text';
+
+// --- English Translation Map ---
+
 export default defineI18nLocale(() => ({
   lang: {
     en: 'English',
     ar: 'Arabic',
   },
-  coffee: 'Coffee',
-  home_hero_c: 'C',
-  home_hero_title_top: 'Offee',
-  home_hero_title_bottom: '&Shop',
-  home_hero_desc_top: 'Get your order (better) coffee',
-  home_hero_desc_bottom: 'delivered to you if you want.',
-  home_hero_btn_offer_msg: 'SHOP 20% OFF',
-  home_products_1st_title: 'Our Products',
-  home_products_2nd_title: 'Special to Try',
-  cart: 'Cart',
-  cart_empty_title: 'Empty cart',
-  cart_empty_desc: 'Add some items to the cart',
-  cart_close: 'Close',
-  cart_clear: 'Clear',
-  cart_checkout: 'Check out',
-  cart_checkout_confirm: 'yes',
-  cart_checkout_reject: 'no',
-  cart_checkout_confirm_title: 'Check out Confirm',
-  cart_checkout_confirm_desc: 'Are you sure you want to complete the check out?',
-  cart_checkout_done_title: 'Check out done',
-  cart_checkout_done_desc: 'Check out performed successfully',
-  cart_add_msg: 'Added to cart',
-  cart_remove_msg: 'Remove from cart',
-  cart_add_btn_msg: 'Added to cart',
-  cart_remove_btn_msg: 'Add to cart',
-  nav_links: {
-    home: 'Home',
-    products: 'Products',
-  },
+  text: random_text_en,
+  home: home_page_en,
+  cart: cart_en,
+  nav_links: nav_en,
+  products: products_en,
+  footer: footer_en,
 }));

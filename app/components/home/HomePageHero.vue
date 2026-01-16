@@ -8,7 +8,7 @@
 <template>
   <div
     orientation="horizontal"
-    class="mb-20 grid grid-cols-1 gap-7 p-30 text-center sm:text-start md:grid-cols-2"
+    class="mb-20 grid grid-cols-1 gap-0 py-25 text-center sm:px-30 sm:text-start md:grid-cols-2"
   >
     <div class="flex flex-col gap-9">
       <h1
@@ -17,7 +17,7 @@
       >
         <span class="whitespace-nowrap">
           <span class="relative">
-            <span>{{ $t('home_hero_c') }}</span>
+            <span>{{ $t('home.hero.c') }}</span>
             <img
               v-if="$i18n.locale === 'en'"
               src="~/assets/imgs/coffee.svg"
@@ -25,14 +25,14 @@
               class="absolute top-[52%] left-[55%] w-[50%] -translate-1/2"
             />
           </span>
-          <span>{{ $t('home_hero_title_top') }}</span>
+          <span>{{ $t('home.hero.title_top') }}</span>
         </span>
-        <span>{{ $t('home_hero_title_bottom') }}</span>
+        <span>{{ $t('home.hero.title_bottom') }}</span>
       </h1>
 
       <p class="text-muted flex flex-col px-3">
-        <span>{{ $t('home_hero_desc_top') }}</span>
-        <span>{{ $t('home_hero_desc_bottom') }}</span>
+        <span>{{ $t('home.hero.desc_top') }}</span>
+        <span>{{ $t('home.hero.desc_bottom') }}</span>
       </p>
 
       <div
@@ -42,7 +42,7 @@
           :to="{ name: 'products' }"
           class="border-accent-base text-accent-base flex items-center gap-3.5 rounded-[20px] border px-7 py-2.5 font-medium whitespace-nowrap"
         >
-          <span>{{ $t('home_hero_btn_offer_msg') }}</span>
+          <span>{{ $t('home.hero.btn_offer_msg') }}</span>
           <UIcon
             name="mdi-light:arrow-up"
             class="text-xl font-medium"
