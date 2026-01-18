@@ -23,6 +23,10 @@
 
 <template>
   <div>
+    <Head>
+      <Title>{{ $t('text.shop') }}</Title>
+    </Head>
+
     <HomePageHero />
     <HomePageMarquee />
     <HomePageProducts />

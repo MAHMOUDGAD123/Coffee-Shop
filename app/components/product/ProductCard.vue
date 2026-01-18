@@ -1,11 +1,4 @@
 <script setup lang="ts">
-  // --- Imports ---
-
-  import ProductRating from './ProductRating.vue';
-  import coffeeImg from '~/assets/imgs/coffee.webp';
-  import equipmentImg from '~/assets/imgs/equipment.webp';
-  import roastingImg from '~/assets/imgs/roasting.webp';
-
   // --- Macros ---
 
   const props = defineProps<{
@@ -15,16 +8,6 @@
   // --- State ---
 
   const { locale } = useI18n();
-
-  // --- Data ---
-
-  const imagesMap = {
-    coffee: coffeeImg,
-    equipment: equipmentImg,
-    roasting: roastingImg,
-  };
-
-  const prodImage = imagesMap[props.product.category.en];
 
   // --- Computed ---
 
@@ -49,7 +32,7 @@
 
       <img
         loading="lazy"
-        :src="prodImage"
+        :src="product.img"
         alt="coffee"
         class="img-box-shadow z-1 aspect-square w-[95%] rounded-tl-[70px] rounded-tr-[inherit] rounded-b-[inherit] bg-[#f2f2f2] object-cover"
       />

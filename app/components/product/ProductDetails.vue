@@ -9,11 +9,9 @@
   // --- Data & Stores ---
 
   const cartStore = useCartStore();
-  const categoryFilterStore = useCategoryFilterStore();
 
   // --- State ---
 
-  const quantity = ref(1);
   const { locale } = useI18n();
 
   // --- Computed ---
@@ -27,8 +25,12 @@
   // --- Methods ---
 
   const toggleItemInCart = () => {
-    // quantity.value = 1;
-    cartStore.toggleCartItem(product);
+    cartStore.toggleCartItem(product, product.cartCount);
+  };
+
+  const handleCountChange = () => {
+    if (!product.inCart) return;
+    cartStore.updateItemCartCount(product, product.cartCount);
   };
 </script>
 
@@ -80,7 +82,13 @@
     <!-- Actions -->
     <div class="flex flex-col items-center gap-4 sm:flex-row">
       <div class="w-full sm:w-32">
-        <UInputNumber v-model="quantity" variant="outline" class="w-full" :min="1" />
+        <UInputNumber
+          v-model="product.cartCount"
+          @change="handleCountChange"
+          variant="outline"
+          class="w-full"
+          :min="1"
+        />
       </div>
 
       <UButton

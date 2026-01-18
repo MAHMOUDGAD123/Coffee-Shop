@@ -17,7 +17,9 @@
 
     <LayoutHeader />
 
-    <main class="min-h-[calc(100vh-var(--ui-header-height))]">
+    <main
+      class="min-h-[calc(100vh-var(--ui-header-height))] sm:mt-[calc(var(--ui-header-height)+50px)]"
+    >
       <slot></slot>
     </main>
 

@@ -10,13 +10,13 @@ export default defineEventHandler(async (ev) => {
     return authSession.data.user;
   }
 
-  const newCartSet = new Set(authSession.data.user.cart);
-  newCartSet.add(reqBody.productId);
+  const newCart = { ...authSession.data.user.cart };
+  newCart[reqBody.productId] = reqBody.count;
 
   await authSession.update({
     user: {
       ...authSession.data.user,
-      cart: [...newCartSet],
+      cart: newCart,
     },
   });
 

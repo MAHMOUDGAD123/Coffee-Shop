@@ -25,6 +25,8 @@ interface Product {
 
 interface ProductWithMetaData extends Product {
   inCart: boolean;
+  cartCount: number;
+  img: string;
 }
 
 interface ServerProductsStore {

@@ -1,8 +1,7 @@
 interface CartRequestBody {
   productId?: string;
+  count: number;
 }
-
-type CartItems = Record<string, number>;
 
 interface FilterRequestBody {
   filter: CategoryFilter;

@@ -95,20 +95,40 @@
             />
           </div>
 
-          <div class="ga-3 flex flex-col text-start">
-            <h6 class="font-solid text-lg">
-              {{ isEnglish ? item.shortName.en : item.shortName.ar }}
-            </h6>
+          <div class="flex flex-col gap-1 text-start">
+            <div class="flex items-center gap-3">
+              <span class="font-solid text-lg">
+                {{ isEnglish ? item.shortName.en : item.shortName.ar }}
+              </span>
+              <span class="bg-accent-base rounded-2xl px-2 text-white">{{
+                $n(item.cartCount, 'integer')
+              }}</span>
+            </div>
+
             <p class="text-dimmed line-clamp-2">
               {{ isEnglish ? item.description.en : item.description.ar }}
             </p>
+
+            <UInputNumber
+              variant="outline"
+              size="sm"
+              v-model="item.cartCount"
+              @change="
+                () => {
+                  cartStore.updateItemCartCount(item, item.cartCount);
+                }
+              "
+              class="w-30"
+              :min="1"
+            />
           </div>
-          <UTooltip text="Remove">
+
+          <UTooltip :text="$t('text.remove')">
             <UButton
               icon="fa7-solid:trash"
               variant="solid"
               color="secondary"
-              @click="() => cartStore.toggleCartItem(item)"
+              @click="() => cartStore.toggleCartItem(item, 1)"
             />
           </UTooltip>
         </UButton>

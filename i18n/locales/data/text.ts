@@ -7,6 +7,8 @@ export const random_text_en: Record<string, string> = {
   based_on: 'Based on',
   reviews: 'reviews',
   best_seller: 'Best Seller',
+  shop: 'Shop',
+  remove: 'Remove',
 };
 
 export const random_text_ar: Record<string, string> = {
@@ -18,4 +20,6 @@ export const random_text_ar: Record<string, string> = {
   based_on: 'بناءً علي',
   reviews: 'تقييمات',
   best_seller: 'الأفضل مبيعاً',
+  shop: 'المتجر',
+  remove: 'إزالة',
 };

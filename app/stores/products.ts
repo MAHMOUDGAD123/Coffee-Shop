@@ -1,4 +1,18 @@
+// --- Imports ---
+
+import coffeeImg from '~/assets/imgs/coffee.webp';
+import equipmentImg from '~/assets/imgs/equipment.webp';
+import roastingImg from '~/assets/imgs/roasting.webp';
+
 export const useProductsStore = defineStore('products', () => {
+  // --- Data ---
+
+  const productImg = {
+    coffee: coffeeImg,
+    equipment: equipmentImg,
+    roasting: roastingImg,
+  };
+
   // --- State ---
 
   const $api = useRequestFetch();
@@ -13,10 +27,17 @@ export const useProductsStore = defineStore('products', () => {
     });
 
     const list: ProductWithMetaData[] = [];
+
     for (let i = 0; i < storeData.itemCount; ++i) {
       const product = storeData.list[i];
-      const inCart = userData.value.cart.includes(product.id);
-      list.push({ ...product, inCart });
+      const cartCount = userData.value.cart[product.id];
+
+      list.push({
+        ...product,
+        inCart: !!cartCount,
+        cartCount: cartCount ?? 1,
+        img: productImg[product.category.en],
+      });
     }
     productStoreData.value = {
       categories: storeData.categories,

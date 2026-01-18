@@ -1,9 +1,9 @@
+type CartItems = Record<string, number>;
+
 interface ServerUserInfo {
-  cart: string[];
   filter: CategoryFilter;
   language: Language;
+  cart: CartItems;
 }
 
 type ClientUserInfo = ServerUserInfo;
-
-type UserSignupInfo = Pick<ServerUserInfo, 'username'>;

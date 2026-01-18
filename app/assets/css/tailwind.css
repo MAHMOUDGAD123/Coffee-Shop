@@ -45,19 +45,13 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    view-transition-name: root;
+    /* scrollbar-gutter: stable; */
 
     --ui-container: 85rem;
     --ui-header-height: --spacing(20);
     --ui-footer-height: 50px;
 
     @apply scrollbar-none sm:[scrollbar-width:thin];
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    :root {
-      view-transition-name: none;
-    }
   }
 
   *,
@@ -73,13 +67,18 @@
     -moz-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
-  html {
+  html,
+  body {
     overflow-x: hidden;
   }
 
   body {
     min-width: var(--min-width-body);
-    overflow-x: hidden;
+  }
+
+  /* Prevent the Nuxt UI <USlideover /> component from giving the body padding-right */
+  body[style*='overflow: hidden'] {
+    padding-right: 0 !important;
   }
 
   button {

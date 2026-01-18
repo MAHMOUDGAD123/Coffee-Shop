@@ -22,14 +22,16 @@ export const useCartStore = defineStore('cart', () => {
     cartSliderOpen.value = !cartSliderOpen.value;
   };
 
-  const toggleCartItem = async (product: ProductWithMetaData) => {
+  const toggleCartItem = async (product: ProductWithMetaData, count: number) => {
     const isAdded = !product.inCart;
     product.inCart = isAdded;
+    product.cartCount = count;
 
-    await $fetch(isAdded ? '/api/cart/add' : '/api/cart/remove', {
+    $fetch(isAdded ? '/api/cart/add' : '/api/cart/remove', {
       method: 'POST',
       body: {
         productId: product.id,
+        count,
       },
     });
 
@@ -44,12 +46,28 @@ export const useCartStore = defineStore('cart', () => {
     });
   };
 
+  const updateItemCartCount = useDebounceFn((product: ProductWithMetaData, count: number) => {
+    product.cartCount = count;
+
+    $fetch('/api/cart/add', {
+      method: 'POST',
+      body: {
+        productId: product.id,
+        count,
+      },
+    });
+  }, 1000);
+
   const clearCart = async () => {
     if (cartEmpty.value) return;
 
     productStoreData.value = {
       ...productStoreData.value,
-      list: productStoreData.value.list.map((product) => ({ ...product, inCart: false })),
+      list: productStoreData.value.list.map((product) => ({
+        ...product,
+        inCart: false,
+        cartCount: 1,
+      })),
     };
 
     await $fetch('/api/cart/clear', { method: 'POST' });
@@ -90,6 +108,7 @@ export const useCartStore = defineStore('cart', () => {
     cartConfirmModelOpen,
     toggleCartItem,
     toggleCartSlider,
+    updateItemCartCount,
     confirmCheckout,
     clearCart,
   };

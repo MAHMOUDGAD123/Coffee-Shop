@@ -18,6 +18,10 @@
 
 <template>
   <div class="relative z-0 mt-25 mb-50 flex flex-col gap-15 *:z-1">
+    <Head>
+      <Title>{{ $t('text.products') }}</Title>
+    </Head>
+
     <div class="absolute top-0 -right-10">
       <img
         loading="lazy"

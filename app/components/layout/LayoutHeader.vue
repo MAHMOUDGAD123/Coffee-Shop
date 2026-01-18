@@ -13,7 +13,7 @@
 
 <template>
   <header
-    class="top-0 z-10 flex h-(--ui-header-height) items-center justify-center transition-colors sm:sticky"
+    class="top-0 z-10 flex h-(--ui-header-height) w-screen items-center justify-center transition-colors sm:fixed"
     :class="{ 'bg-white': !scrollAtTop && isSmallScreen }"
   >
     <UContainer class="mx-auto flex h-full w-full max-w-350 items-center justify-between">

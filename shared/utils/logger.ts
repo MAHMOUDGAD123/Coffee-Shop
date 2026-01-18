@@ -1,8 +1,3 @@
-const getTime = () => {
-  const now = new Date();
-  return `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
-};
-
 interface LoggerOptions {
   tag?: 'NUXT' | 'APP' | 'SERVER' | 'API' | (string & {});
   side?: 'client' | 'server' | 'both';
