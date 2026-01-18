@@ -1,7 +1,11 @@
 export const useProductsStore = defineStore('products', () => {
+  // --- State ---
+
   const $api = useRequestFetch();
   const { userData } = storeToRefs(useUserStore());
   const productStoreData = ref<ClientProductsStore | null>(null);
+
+  // --- Methods ---
 
   const loadData = async () => {
     const storeData = await $api<ServerProductsStore>('/api/products', {

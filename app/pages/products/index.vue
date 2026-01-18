@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  // --- Macros ---
+
   useHead({
     title: 'Products',
     meta: [

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  // --- Macros ---
+
   const { d = 35 } = defineProps<{
     d?: number;
   }>();

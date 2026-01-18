@@ -1,10 +1,5 @@
-import type { RouteMap } from 'vue-router';
-
 declare module '#app' {
-  interface PageMeta {
-    pageHero?: Uppercase<keyof RouteMap> | (string & {});
-    pageHeroIcon?: string;
-  }
+  interface PageMeta {}
 
   export interface NuxtError<DataT = unknown> {
     data: {

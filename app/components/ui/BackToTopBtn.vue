@@ -1,5 +1,7 @@
 <script setup lang="ts">
-  const showup = shallowRef(false);
+  // --- State ---
+
+  const showup = ref(false);
 
   const windowScroll = useWindowScroll({
     onScroll: () => {
@@ -11,6 +13,8 @@
     },
     throttle: 500,
   });
+
+  // --- Methods ---
 
   const scrollToTop = () => {
     window.scrollTo({ behavior: 'smooth', top: 0 });

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  // --- State ---
+
   const categoryFilterStore = useCategoryFilterStore();
   const { currentFilter } = storeToRefs(categoryFilterStore);
 </script>

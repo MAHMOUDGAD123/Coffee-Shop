@@ -17,7 +17,7 @@
     :class="{ 'bg-white': !scrollAtTop && isSmallScreen }"
   >
     <UContainer class="mx-auto flex h-full w-full max-w-350 items-center justify-between">
-      <AppLogo />
+      <UiAppLogo />
 
       <div class="flex items-center gap-2">
         <UiCartSlider />

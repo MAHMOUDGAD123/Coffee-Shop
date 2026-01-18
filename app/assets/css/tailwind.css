@@ -73,6 +73,10 @@
     -moz-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     min-width: var(--min-width-body);
     overflow-x: hidden;

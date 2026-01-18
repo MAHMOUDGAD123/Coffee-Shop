@@ -1,5 +1,8 @@
 <script setup lang="ts">
+  // --- Imports ---
   import type { NuxtError } from '#app';
+
+  // --- Macros ---
 
   useHead({
     title: 'ERROR',

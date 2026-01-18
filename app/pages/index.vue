@@ -1,5 +1,9 @@
 <script setup lang="ts">
+  // --- Imports ---
+
   import CoffeeBeanLoader from '~/components/ui/CoffeeBeanLoader.vue';
+
+  // --- Macros ---
 
   useHead({
     title: 'Shop',

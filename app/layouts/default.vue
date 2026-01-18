@@ -1,6 +1,10 @@
 <script setup lang="ts">
+  // --- Imports ---
+
   import LayoutFooter from '~/components/layout/LayoutFooter.vue';
   import LayoutHeader from '~/components/layout/LayoutHeader.vue';
+
+  // --- State ---
 
   const languageStore = useLanguageStore();
 </script>
@@ -19,6 +23,6 @@
 
     <LayoutFooter />
 
-    <BackToTopBtn />
+    <UiBackToTopBtn />
   </UApp>
 </template>

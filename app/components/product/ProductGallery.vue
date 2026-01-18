@@ -1,10 +1,12 @@
 <script setup lang="ts">
   // --- Macros ---
+
   const { images } = defineProps<{
     images: string[];
   }>();
 
   // --- State ---
+
   const activeImage = ref(images[0]);
 </script>
 

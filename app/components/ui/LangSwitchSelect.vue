@@ -1,5 +1,6 @@
 <script setup lang="ts">
   // --- State ---
+
   const languageStore = useLanguageStore();
 </script>
 

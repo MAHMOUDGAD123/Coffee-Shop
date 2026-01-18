@@ -1,7 +1,11 @@
 <script setup lang="ts">
+  // --- Macros ---
+
   defineProps<{
     limit?: number;
   }>();
+
+  // --- State ---
 
   const categoryFilterStore = useCategoryFilterStore();
 </script>
