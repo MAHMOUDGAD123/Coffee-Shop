@@ -12,8 +12,8 @@ export const cart_en = {
   checkout_done_desc: 'Check out performed successfully',
   add_msg: 'Added to cart',
   remove_msg: 'Remove from cart',
-  add_btn_msg: 'Added to cart',
-  remove_btn_msg: 'Add to cart',
+  add_btn_msg: 'Add to cart',
+  remove_btn_msg: 'remove from cart',
 };
 
 export const cart_ar = {
