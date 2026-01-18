@@ -4,6 +4,7 @@ export const useLanguageStore = defineStore('language', () => {
   // --- State ---
 
   const { locale, locales, t, setLocale, localeProperties } = useI18n();
+  const loading = ref(false);
 
   // --- Computed ---
 
@@ -14,8 +15,10 @@ export const useLanguageStore = defineStore('language', () => {
       return locale.value;
     },
     async set(lang) {
+      loading.value = true;
       await setLocale(lang);
-      updateAPILanguage(lang);
+      await updateAPILanguage(lang);
+      loading.value = true;
 
       useHead({
         htmlAttrs: {
@@ -51,5 +54,6 @@ export const useLanguageStore = defineStore('language', () => {
     language,
     languageOptions,
     direction,
+    loading,
   };
 });

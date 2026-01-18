@@ -1,9 +1,11 @@
 <script setup lang="ts">
+  // --- State ---
   const languageStore = useLanguageStore();
 </script>
 
 <template>
   <USelect
+    :loading="languageStore.loading"
     v-model="languageStore.language"
     :items="languageStore.languageOptions"
     class="w-33"
