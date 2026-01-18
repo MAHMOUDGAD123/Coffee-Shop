@@ -24,7 +24,7 @@
     <HomePageProducts />
     <HomePageWelcome />
 
-    <div dir="ltr" class="mx-auto my-40 w-full px-20 text-center md:text-end">
+    <div class="mx-auto my-40 w-full px-20 text-center md:text-end">
       <CoffeeBeanLoader />
     </div>
   </div>

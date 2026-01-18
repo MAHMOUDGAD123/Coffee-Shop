@@ -5,7 +5,7 @@ interface CartRequestBody {
 type CartItems = Record<string, number>;
 
 interface FilterRequestBody {
-  filter: FilterCategory;
+  filter: CategoryFilter;
 }
 
 interface LanguageRequestBody {

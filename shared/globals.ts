@@ -1,1 +1,1 @@
-export const filters: FilterCategory[] = ['all', 'coffee', 'equipment', 'roasting'];
+export const filters: CategoryFilter[] = ['all', 'coffee', 'equipment', 'roasting'];

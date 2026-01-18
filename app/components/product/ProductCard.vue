@@ -1,12 +1,35 @@
 <script setup lang="ts">
+  // --- Imports ---
+
   import ProductRating from './ProductRating.vue';
+  import coffeeImg from '~/assets/imgs/coffee.webp';
+  import equipmentImg from '~/assets/imgs/equipment.webp';
+  import roastingImg from '~/assets/imgs/roasting.webp';
+
+  // --- Macros ---
 
   const props = defineProps<{
     product: ProductWithMetaData;
   }>();
 
-  const randomReview = props.product.reviews[3];
-  const dicountLabel = `-${props.product.discount * 100}%`;
+  // --- State ---
+
+  const { locale } = useI18n();
+
+  // --- Data ---
+
+  const imagesMap = {
+    coffee: coffeeImg,
+    equipment: equipmentImg,
+    roasting: roastingImg,
+  };
+
+  const prodImage = imagesMap[props.product.category.en];
+
+  // --- Computed ---
+
+  const review = computed(() => props.product.reviews[3]);
+  const isEnglish = computed(() => locale.value === 'en');
 </script>
 
 <template>
@@ -21,21 +44,26 @@
         v-if="product.discount > 0"
         class="absolute top-1/9 left-1/9 z-2 rounded-md bg-amber-200 px-3 py-0.5 text-sm font-medium"
       >
-        {{ dicountLabel }}
+        -{{ $n(product.discount * 100, 'integer') }}%
       </div>
 
       <img
-        src="~/assets/imgs/coffee-big-bag.webp"
+        loading="lazy"
+        :src="prodImage"
         alt="coffee"
         class="img-box-shadow z-1 aspect-square w-[95%] rounded-tl-[70px] rounded-tr-[inherit] rounded-b-[inherit] bg-[#f2f2f2] object-cover"
       />
     </div>
 
-    <h4 class="text-2xl font-medium text-black">{{ product.shortName }}</h4>
+    <h4 class="text-2xl font-medium text-black">
+      {{ isEnglish ? product.shortName.en : product.shortName.ar }}
+    </h4>
 
-    <h5 class="text-2xl">{{ randomReview.customerName }}</h5>
+    <h5 class="text-2xl">
+      {{ isEnglish ? review.customerName.en : review.customerName.ar }}
+    </h5>
 
-    <ProductRating :rate="randomReview.reviewStars" />
+    <ProductRating :rate="review.reviewStars" />
   </ULink>
 </template>
 

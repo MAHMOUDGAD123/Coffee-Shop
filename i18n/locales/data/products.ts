@@ -1,5 +1,5 @@
 // --- Filter ---
-type ProductsFilter = Record<FilterCategory, string>;
+type ProductsFilter = Record<CategoryFilter, string>;
 
 const products_filter_en = {
   all: 'All Categories',

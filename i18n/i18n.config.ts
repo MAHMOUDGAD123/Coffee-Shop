@@ -8,10 +8,15 @@ export default defineI18nConfig(() => ({
         currency: 'USD',
         currencyDisplay: 'symbol',
       },
-      decimal: {
+      decimal2: {
         style: 'decimal',
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
+      },
+      decimal1: {
+        style: 'decimal',
+        minimumFractionDigits: 1,
+        maximumFractionDigits: 1,
       },
       integer: {
         style: 'decimal',
@@ -30,15 +35,26 @@ export default defineI18nConfig(() => ({
     ar: {
       currency: {
         style: 'currency',
-        currency: 'EGP', // Default currency (can be overridden at runtime)
+        currency: 'EGP',
         currencyDisplay: 'symbol',
-        numberingSystem: 'arab', // Forces Eastern digits: ١٫٢٣ $
+        numberingSystem: 'arab',
       },
       decimal: {
         style: 'decimal',
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
-        numberingSystem: 'arab', // ١٢٣٫٤٥
+      },
+      decimal2: {
+        style: 'decimal',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+        numberingSystem: 'arab',
+      },
+      decimal1: {
+        style: 'decimal',
+        minimumFractionDigits: 1,
+        maximumFractionDigits: 1,
+        numberingSystem: 'arab',
       },
       integer: {
         style: 'decimal',
@@ -48,13 +64,13 @@ export default defineI18nConfig(() => ({
       percent: {
         style: 'percent',
         useGrouping: false,
-        numberingSystem: 'arab', // ٥٠٪
+        numberingSystem: 'arab',
       },
       compact: {
         style: 'decimal',
         notation: 'compact',
         compactDisplay: 'short',
-        numberingSystem: 'arab', // ١٫٥ ألف
+        numberingSystem: 'arab',
       },
     },
   },

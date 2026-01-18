@@ -9,5 +9,6 @@
     class="w-33"
     variant="subtle"
     icon="fa7-solid:language"
-  />
+  >
+  </USelect>
 </template>

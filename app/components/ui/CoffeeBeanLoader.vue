@@ -12,7 +12,7 @@
       class="jump-spin-animation"
       :style="{ width: `${d}px`, animationDelay: `${i * 100}ms` }"
     >
-      <img src="~/assets/imgs/coffee-bean.svg" alt="Coffee bean" />
+      <img loading="eager" decoding="sync" src="~/assets/imgs/coffee-bean.svg" alt="Coffee bean" />
     </div>
   </div>
 </template>

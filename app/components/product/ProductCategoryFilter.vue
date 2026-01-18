@@ -4,9 +4,8 @@
 </script>
 
 <template>
-  <div class="w-full">
+  <div class="w-full select-none">
     <URadioGroup
-      loop
       orientation="horizontal"
       :items="categoryFilterStore.filterOptions"
       variant="card"

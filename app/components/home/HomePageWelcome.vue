@@ -1,11 +1,17 @@
 <script setup lang="ts">
+  // --- Imports ---
+
   import coffeeImg from '~/assets/imgs/w-coffee.webp';
   import seedsImg from '~/assets/imgs/w-seeds.webp';
   import cupImg from '~/assets/imgs/w-cup.webp';
   import carasauImg from '~/assets/imgs/w-carasau.webp';
 
+  // --- Types ---
+
   type WelcomeCardsKeys = 'quantity' | 'easy' | 'taste' | 'quick';
   type WelcomeCards = { key: WelcomeCardsKeys; img: string }[];
+
+  // --- Data ---
 
   const cardsData: WelcomeCards = [
     {
@@ -26,23 +32,42 @@
     },
   ];
 
+  // --- State ---
+
   const islargeScreen = useMediaQuery('(width >= 1024px)');
+  const { locale } = useI18n();
+
+  // --- Computed ---
+
+  const isEnglish = computed(() => locale.value === 'en');
 </script>
 
 <template>
-  <div dir="ltr" class="z-0 my-20 grid w-screen grid-cols-1 gap-10 lg:my-60 lg:grid-cols-2">
-    <div class="relative z-1 hidden lg:block" v-if="islargeScreen">
-      <img
-        src="~/assets/imgs/blob.svg"
-        alt="blob svg"
-        class="absolute top-1/2 left-0 -translate-y-1/2"
-      />
-      <img
-        src="~/assets/imgs/coffee-bags.webp"
-        alt="Coffee svg"
-        class="xl:270 absolute top-1/2 left-75 w-250 max-w-none -translate-x-1/2 -translate-y-1/2"
-      />
-    </div>
+  <UContainer class="z-0 my-20 grid w-screen grid-cols-1 gap-10 lg:my-60 lg:grid-cols-2">
+    <ClientOnly>
+      <div class="relative z-1" v-if="islargeScreen">
+        <img
+          loading="lazy"
+          src="~/assets/imgs/blob.svg"
+          alt="blob svg"
+          class="absolute top-1/2 w-200 max-w-none -translate-y-1/2"
+          :class="{
+            '-left-120': isEnglish,
+            '-right-120 rotate-180': !isEnglish,
+          }"
+        />
+        <img
+          loading="lazy"
+          src="~/assets/imgs/coffee-bags.webp"
+          alt="Coffee svg"
+          class="absolute top-1/2 w-220 max-w-none -translate-y-1/2"
+          :class="{
+            'left-60 -translate-x-1/2': isEnglish,
+            'right-60 translate-x-1/2': !isEnglish,
+          }"
+        />
+      </div>
+    </ClientOnly>
 
     <div
       :dir="$i18n.localeProperties.value.dir"
@@ -63,6 +88,7 @@
             class="bg-accent-base flex aspect-square max-w-19 min-w-19 items-center justify-center rounded-full"
           >
             <img
+              loading="lazy"
               :src="card.img"
               :alt="$t(`home.welcome.cards.${card.key}.img_alt`)"
               class="w-[70%]"
@@ -79,7 +105,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </UContainer>
 </template>
-
-<style scoped></style>

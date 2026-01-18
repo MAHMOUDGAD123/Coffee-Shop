@@ -2,24 +2,38 @@
   // --- State ---
 
   const cartStore = useCartStore();
-  const isSmaillScreen = useMediaQuery('(width >= 768px)');
+  const isLargeScreen = useMediaQuery('(width >= 1024px)');
+  const { locale } = useI18n();
+
+  // --- Computed ---
+
+  const isEnglish = computed(() => locale.value === 'en');
 </script>
 
 <template>
-  <div
-    orientation="horizontal"
-    class="mb-20 grid grid-cols-1 gap-0 py-25 text-center sm:px-30 sm:text-start md:grid-cols-2"
+  <UContainer
+    class="relative mt-20 mb-30 grid min-h-130 grid-cols-1 items-center gap-15 text-center lg:grid-cols-2 lg:text-start"
   >
-    <div class="flex flex-col gap-9">
+    <div
+      class="hero-shape absolute -top-100 -z-1 h-200 w-500 rounded-full lg:-top-90"
+      :class="{
+        'left-1/3 -rotate-25 lg:left-1/3': isEnglish,
+        'right-1/3 rotate-25 lg:right-1/3': !isEnglish,
+      }"
+    ></div>
+
+    <div class="flex flex-col gap-9 lg:ps-10">
       <h1
-        class="hero text-primary letter-spacing xsm:text-8xl flex flex-col text-7xl font-extrabold select-none md:text-8xl"
-        :class="{ 'leading-27': $i18n.locale === 'ar' }"
+        class="hero text-primary letter-spacing xsm:text-8xl flex flex-col text-6xl font-extrabold select-none"
+        :class="{ 'leading-27': !isEnglish }"
       >
         <span class="whitespace-nowrap">
           <span class="relative">
             <span>{{ $t('home.hero.c') }}</span>
             <img
-              v-if="$i18n.locale === 'en'"
+              loading="eager"
+              decoding="sync"
+              v-if="isEnglish"
               src="~/assets/imgs/coffee.svg"
               alt="coffee-svg"
               class="absolute top-[52%] left-[55%] w-[50%] -translate-1/2"
@@ -36,7 +50,7 @@
       </p>
 
       <div
-        class="xsm:flex-row flex w-full flex-col items-center justify-center gap-5 sm:justify-start"
+        class="xsm:flex-row flex w-full flex-col items-center justify-center gap-5 lg:justify-start"
       >
         <ULink
           :to="{ name: 'products' }"
@@ -46,7 +60,7 @@
           <UIcon
             name="mdi-light:arrow-up"
             class="text-xl font-medium"
-            :class="{ '-rotate-135': $i18n.locale === 'ar', 'rotate-135': $i18n.locale === 'en' }"
+            :class="{ '-rotate-135': !isEnglish, 'rotate-135': isEnglish }"
           ></UIcon>
         </ULink>
 
@@ -54,7 +68,7 @@
           variant="solid"
           color="primary"
           active-class="text-white"
-          class="relative flex aspect-square w-12.5 items-center justify-center rounded-full"
+          class="relative flex aspect-square w-12.5 min-w-12.5 items-center justify-center rounded-full"
           @click="cartStore.toggleCartSlider"
         >
           <UIcon name="uil:cart" class="absolute text-[33px]"></UIcon>
@@ -62,12 +76,20 @@
       </div>
     </div>
 
-    <USkeleton v-if="isSmaillScreen" class="h-full w-full" />
-  </div>
+    <ClientOnly>
+      <div dir="ltr" v-if="isLargeScreen">
+        <UiHeroCarousel />
+      </div>
+    </ClientOnly>
+  </UContainer>
 </template>
 
 <style scoped>
   .hero {
     letter-spacing: 7px;
+  }
+
+  .hero-shape {
+    background-image: linear-gradient(#a3bdcd, #a3bdcd75, #a3bdcd50, #a3bdcd25, transparent 70%);
   }
 </style>

@@ -1,4 +1,10 @@
 <script setup lang="ts">
+  // --- imports ---
+
+  import coffeeImg from '~/assets/imgs/coffee.webp';
+  import equipmentImg from '~/assets/imgs/equipment.webp';
+  import roastingImg from '~/assets/imgs/roasting.webp';
+
   // --- Types ---
 
   type SliderSide = 'left' | 'right';
@@ -10,11 +16,17 @@
     inheritAttrs: false,
   });
 
-  defineProps<{}>();
+  // --- Data ---
+
+  const imagesMap = {
+    coffee: coffeeImg,
+    equipment: equipmentImg,
+    roasting: roastingImg,
+  };
 
   // --- State ---
 
-  const { n: numberFormater } = useI18n();
+  const { n: numberFormater, locale } = useI18n();
   const languageStore = useLanguageStore();
   const cartStore = useCartStore();
   const { cartConfirmModelOpen, cartSliderOpen, cartItemsCount, cartItems, cartEmpty } =
@@ -22,6 +34,7 @@
 
   // --- Computed ---
 
+  const isEnglish = computed(() => locale.value === 'en');
   const cartCountDisplay = computed(() => numberFormater(cartItemsCount.value, 'integer'));
   const sliderSide = computed<SliderSide>(() =>
     languageStore.direction === 'ltr' ? 'right' : 'left',
@@ -73,10 +86,22 @@
           variant="subtle"
           class="flex items-center gap-5"
         >
-          <UIcon name="streamline:coffee-bean-solid" class="aspect-square text-5xl" />
+          <div>
+            <img
+              :src="imagesMap[item.category.en]"
+              loading="lazy"
+              alt="coffee"
+              class="aspect-square w-30"
+            />
+          </div>
+
           <div class="ga-3 flex flex-col text-start">
-            <h6 class="font-solid text-lg">{{ item.shortName }}</h6>
-            <p class="text-dimmed line-clamp-2">{{ item.description }}</p>
+            <h6 class="font-solid text-lg">
+              {{ isEnglish ? item.shortName.en : item.shortName.ar }}
+            </h6>
+            <p class="text-dimmed line-clamp-2">
+              {{ isEnglish ? item.description.en : item.description.ar }}
+            </p>
           </div>
           <UTooltip text="Remove">
             <UButton

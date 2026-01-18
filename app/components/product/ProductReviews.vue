@@ -1,8 +1,18 @@
 <script setup lang="ts">
+  // --- Macros ---
+
   const { averageRating, product } = defineProps<{
     product: ProductWithMetaData;
     averageRating: number;
   }>();
+
+  // --- State ---
+
+  const { locale } = useI18n();
+
+  // --- Computed ---
+
+  const isEnglish = computed(() => locale.value === 'en');
 
   // --- Methods ---
 
@@ -23,24 +33,30 @@
       <!-- Reviews Logic Summary -->
       <div class="h-fit rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
         <div class="text-center">
-          <span class="text-5xl font-bold text-gray-900">{{ averageRating.toFixed(1) }}</span>
+          <span class="text-5xl font-bold text-gray-900">{{ $n(averageRating, 'decimal1') }}</span>
           <div class="my-2 flex justify-center">
             <ProductRating :rate="Math.round(averageRating)" />
           </div>
-          <p class="text-sm text-gray-500">Based on {{ product.reviews.length }} reviews</p>
+          <p class="text-sm text-gray-500">
+            {{ $t('text.based_on') }} {{ $n(product.reviews.length, 'integer') }}
+            {{ $t('text.reviews') }}
+          </p>
         </div>
 
         <div class="mt-6 space-y-2">
           <!-- Star Bars (5 to 1) -->
           <div v-for="star in [5, 4, 3, 2, 1]" :key="star" class="flex items-center text-sm">
-            <span class="w-8">{{ star }} ★</span>
+            <span class="flex items-center">
+              <span class="w-4 text-center">{{ $n(star, 'integer') }}</span>
+              <span>★</span>
+            </span>
             <div class="mx-2 h-2.5 w-full rounded-full bg-gray-200">
               <div
                 class="h-2.5 rounded-full bg-amber-400"
                 :style="{ width: getStarPercentage(star) + '%' }"
               ></div>
             </div>
-            <span class="w-10 text-right">{{ getStarPercentage(star) }}%</span>
+            <span class="w-10 text-right">{{ $n(getStarPercentage(star), 'integer') }}%</span>
           </div>
         </div>
       </div>
@@ -57,15 +73,21 @@
               <div
                 class="flex h-10 w-10 items-center justify-center rounded-full bg-stone-200 text-sm font-bold text-stone-600"
               >
-                {{ review.customerName.charAt(0) }}
+                {{
+                  isEnglish ? review.customerName.en.charAt(0) : review.customerName.ar.charAt(0)
+                }}
               </div>
               <div>
-                <h4 class="text-sm font-bold">{{ review.customerName }}</h4>
+                <h4 class="text-sm font-bold">
+                  {{ isEnglish ? review.customerName.en : review.customerName.ar }}
+                </h4>
                 <ProductRating :rate="Math.round(review.reviewStars)" :d="13" class="mt-0.75" />
               </div>
             </div>
           </div>
-          <p class="text-sm leading-relaxed text-gray-700">"{{ review.description }}"</p>
+          <p class="text-sm leading-relaxed text-gray-700">
+            "{{ isEnglish ? review.description.en : review.description.ar }}"
+          </p>
         </div>
       </div>
     </div>

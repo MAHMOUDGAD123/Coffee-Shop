@@ -13,7 +13,7 @@ export default defineEventHandler(async (ev) => {
   await authSession.update({
     user: {
       ...authSession.data.user,
-      filter: reqBody.filter.toLowerCase() as FilterCategory,
+      filter: reqBody.filter.toLowerCase() as CategoryFilter,
     },
   });
 

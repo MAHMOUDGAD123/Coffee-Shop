@@ -55,6 +55,7 @@
   >
     <img
       v-if="mediaQuery && $route.name === 'shop'"
+      loading="lazy"
       src="~/assets/imgs/coffee-bag.webp"
       alt="Coffee bag"
       class="absolute -top-2/3 right-0 drop-shadow-2xl"

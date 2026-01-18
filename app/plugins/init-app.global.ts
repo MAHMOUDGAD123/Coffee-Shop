@@ -1,5 +1,3 @@
-import { createLogger } from '~~/shared/logger';
-
 export default defineNuxtPlugin(async () => {
   const { $i18n } = useNuxtApp();
   const userStore = useUserStore();
@@ -17,17 +15,17 @@ export default defineNuxtPlugin(async () => {
     },
   });
 
-  if (!import.meta.dev) return;
+  // if (!import.meta.dev) return;
 
-  addRouteMiddleware(
-    'auth',
-    () => {
-      if (userStore.userData) {
-        createLogger({ tag: 'AUTH', side: 'client' }).success('Authorized ✅');
-      } else {
-        createLogger({ tag: 'AUTH', side: 'client' }).warn('Unauthorozed ✅');
-      }
-    },
-    { global: true },
-  );
+  // addRouteMiddleware(
+  //   'auth',
+  //   () => {
+  //     if (userStore.userData) {
+  //       createLogger({ tag: 'AUTH', side: 'client' }).success('Authorized ✅');
+  //     } else {
+  //       createLogger({ tag: 'AUTH', side: 'client' }).warn('Unauthorozed ✅');
+  //     }
+  //   },
+  //   { global: true },
+  // );
 });

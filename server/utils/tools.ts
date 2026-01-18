@@ -1,5 +1,3 @@
-import { createLogger } from '~~/shared/logger';
-
 const _buildProductIdlookup = (products: Product[]) => {
   const productIdLookup: Record<string, Product> = {};
   products.forEach((product) => {
@@ -9,9 +7,9 @@ const _buildProductIdlookup = (products: Product[]) => {
 };
 
 export const initStore = async () => {
-  if (import.meta.dev) {
-    createLogger({ tag: 'Init' })!.success('Init Data');
-  }
+  // if (import.meta.dev) {
+  //   createLogger({ tag: 'Init' })!.success('Init Data');
+  // }
   const storage = useStorage();
   const storeData = (await import('~~/public/products.json'))
     .default as unknown as ServerProductsStore;
@@ -19,7 +17,6 @@ export const initStore = async () => {
 
   storage.setItem<ServerProductsStore>(STORAGE_KEYS.productStoreData, storeData);
   storage.setItem<ProductIdLookup>(STORAGE_KEYS.productIdLookup, productIdLookup);
-  // storage.setItem<ServerUserInfo[]>(STORAGE_KEYS.users, []);
 };
 
 export const createUnauthorizedError = () => {

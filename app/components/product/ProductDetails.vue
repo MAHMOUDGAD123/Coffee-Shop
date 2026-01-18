@@ -14,9 +14,11 @@
   // --- State ---
 
   const quantity = ref(1);
+  const { locale } = useI18n();
 
   // --- Computed ---
 
+  const isEnglish = computed(() => locale.value === 'en');
   const originalPrice = computed(() => {
     if (!product.discount) return null;
     return product.price / (1 - product.discount);
@@ -34,11 +36,20 @@
   <div class="product-info flex h-full flex-col">
     <!-- Title & Badges -->
     <div class="mb-2">
-      <span
-        class="mb-2 inline-block rounded bg-amber-100 px-2 py-1 text-xs font-bold tracking-wide text-amber-800 uppercase"
-        >{{ categoryFilterStore.getCategory(product.category).label }}</span
-      >
-      <h1 class="text-3xl font-bold">{{ product.title }}</h1>
+      <div class="flex flex-wrap items-center gap-2">
+        <span
+          class="mb-2 inline-block rounded bg-amber-100 px-2 py-1 text-xs font-bold tracking-wide text-amber-800 uppercase"
+          >{{ isEnglish ? product.category.en : product.category.ar }}</span
+        >
+        <span
+          v-if="product.isBestSeller"
+          class="mb-2 inline-block rounded bg-amber-100 px-2 py-1 text-xs font-bold tracking-wide text-amber-800 uppercase"
+          >{{ $t('text.best_seller') }}</span
+        >
+      </div>
+      <h1 class="text-3xl font-bold">
+        {{ isEnglish ? product.title.en : product.title.ar }}
+      </h1>
     </div>
 
     <!-- Rating -->
@@ -46,20 +57,22 @@
       <ProductRating :rate="Math.round(averageRating)" />
     </div>
 
-    <p class="mb-6 leading-relaxed text-gray-600">{{ product.description }}</p>
+    <p class="mb-6 leading-relaxed text-gray-600">
+      {{ isEnglish ? product.description.en : product.description.ar }}
+    </p>
 
     <!-- Price -->
     <div class="mb-6">
       <div class="flex items-center gap-4">
-        <span class="text-3xl font-bold text-gray-900">${{ product.price.toFixed(2) }}</span>
+        <span class="text-3xl font-bold text-gray-900">{{ $n(product.price, 'decimal2') }}$</span>
         <span v-if="product.discount > 0" class="text-lg text-gray-400 line-through"
-          >${{ originalPrice?.toFixed(2) }}</span
+          >{{ $n(originalPrice, 'decimal2') }}$</span
         >
         <span
           v-if="product.discount > 0"
           class="text-accent-base ml-3 rounded bg-red-100 px-2.5 py-0.5 text-xs font-semibold"
         >
-          -{{ product.discount }}%
+          -{{ $n(product.discount, 'decimal2') }}%
         </span>
       </div>
     </div>

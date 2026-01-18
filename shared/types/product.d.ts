@@ -1,19 +1,24 @@
+type LocalizedString = {
+  en: string;
+  ar: string;
+};
+
 type ProductReviewRate = 1 | 2 | 3 | 4 | 5;
 
 interface Review {
-  customerName: string;
-  description: string;
+  customerName: LocalizedString;
+  description: LocalizedString;
   reviewStars: ProductReviewRate;
 }
 
 interface Product {
   id: string;
-  title: string;
-  shortName: string;
-  description: string;
+  title: LocalizedString;
+  shortName: LocalizedString;
+  description: LocalizedString;
   price: number;
   discount: number;
-  category: Category;
+  category: { en: Category; ar: string };
   reviews: Review[];
   isBestSeller: boolean;
 }
@@ -36,4 +41,4 @@ type ProductIdLookup = Record<string, Product>;
 
 type Category = 'coffee' | 'equipment' | 'roasting';
 
-type FilterCategory = Category | 'best' | 'offer' | 'all';
+type CategoryFilter = Category | 'best' | 'offer' | 'all';

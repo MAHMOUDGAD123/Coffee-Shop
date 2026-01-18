@@ -1,7 +1,7 @@
 // --- Types ---
 
 interface FilterOptionsMapProps {
-  value: FilterCategory;
+  value: CategoryFilter;
   label:
     | 'All Categories'
     | 'Special Offers'
@@ -10,7 +10,7 @@ interface FilterOptionsMapProps {
     | 'Coffee Equipment'
     | 'Roasting';
 }
-type FilterMetaDataMap = Record<FilterCategory, Pick<FilterOptionsMapProps, 'label'>>;
+type FilterMetaDataMap = Record<CategoryFilter, Pick<FilterOptionsMapProps, 'label'>>;
 
 export const useCategoryFilterStore = defineStore('categoryFilter', () => {
   // --- State ---
@@ -59,9 +59,9 @@ export const useCategoryFilterStore = defineStore('categoryFilter', () => {
 
   const _filterOptionsMap = computed(
     () =>
-      new Map<FilterCategory, FilterOptionsMapProps>(
+      new Map<CategoryFilter, FilterOptionsMapProps>(
         ['all', 'best', 'offer', ...productsStore.data.categories].map((category) => {
-          const cat = category as FilterCategory;
+          const cat = category as CategoryFilter;
           return [
             cat,
             {
@@ -80,7 +80,7 @@ export const useCategoryFilterStore = defineStore('categoryFilter', () => {
       case 'coffee':
       case 'equipment':
       case 'roasting':
-        return productsStore.data.list.filter((prod) => prod.category === currentFilter.value);
+        return productsStore.data.list.filter((prod) => prod.category.en === currentFilter.value);
       case 'best':
         return productsStore.data.list.filter((prod) => prod.isBestSeller);
       case 'offer':
@@ -93,7 +93,7 @@ export const useCategoryFilterStore = defineStore('categoryFilter', () => {
 
   // --- Methods ---
 
-  const getCategory = (category: FilterCategory) => {
+  const getCategory = (category: CategoryFilter) => {
     return _filterOptionsMap.value.get(category);
   };
 

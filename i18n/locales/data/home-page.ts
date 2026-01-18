@@ -1,7 +1,7 @@
 export const home_page_en = {
   hero: {
     c: 'C',
-    title_top: 'Offee',
+    title_top: 'offee',
     title_bottom: '&Shop',
     desc_top: 'Get your order (better) coffee',
     desc_bottom: 'delivered to you if you want.',

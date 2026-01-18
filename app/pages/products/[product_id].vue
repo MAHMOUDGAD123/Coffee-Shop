@@ -4,7 +4,7 @@
   import prodImg1 from '~/assets/imgs/prod1.webp';
   import prodImg2 from '~/assets/imgs/prod2.webp';
   import prodImg3 from '~/assets/imgs/prod3.webp';
-  import ProductDetails from '../../components/product/ProductDetails.vue';
+  import ProductDetails from '~/components/product/ProductDetails.vue';
 
   // --- Macros ---
 
@@ -12,11 +12,25 @@
     name: 'product',
   });
 
-  // --- Data & Stores ---
+  // --- Data & State ---
 
   const route = useRoute();
   const productsStore = useProductsStore();
+  const { locale } = useI18n();
+
+  const images = [prodImg1, prodImg2, prodImg3];
+
+  // --- Computed ---
+
+  const isEnglish = computed(() => locale.value === 'en');
   const product = computed(() => productsStore.getProductById(route.params.product_id as string));
+  const averageRating = computed(() => {
+    if (product.value.reviews.length === 0) return 0;
+    const total = product.value.reviews.reduce((acc, review) => acc + review.reviewStars, 0);
+    return total / product.value.reviews.length;
+  });
+
+  // --- Check ---
 
   if (!product) {
     throw createError({
@@ -28,23 +42,16 @@
       },
     });
   }
-
-  const images = [prodImg1, prodImg2, prodImg3];
-
-  // --- Computed ---
-
-  const averageRating = computed(() => {
-    if (product.value.reviews.length === 0) return 0;
-    const total = product.value.reviews.reduce((acc, review) => acc + review.reviewStars, 0);
-    return total / product.value.reviews.length;
-  });
 </script>
 
 <template>
   <div class="min-h-screen text-gray-800">
     <Head>
-      <Title>{{ product.shortName }}</Title>
-      <Meta name="description" :content="product.description" />
+      <Title>{{ isEnglish ? product.shortName.en : product.shortName.ar }}</Title>
+      <Meta
+        name="description"
+        :content="isEnglish ? product.description.en : product.description.ar"
+      />
     </Head>
 
     <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">

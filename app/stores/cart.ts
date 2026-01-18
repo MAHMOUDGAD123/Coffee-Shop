@@ -7,12 +7,14 @@ export const useCartStore = defineStore('cart', () => {
   const cartConfirmModelOpen = ref(false);
   const toast = useToast();
   const { t: translate } = useI18n();
+  const { $i18n } = useNuxtApp();
 
   // --- Computed ---
 
   const cartItems = computed(() => productsStore.data.list.filter((product) => product.inCart));
   const cartItemsCount = computed(() => cartItems.value.length);
   const cartEmpty = computed(() => cartItems.value.length === 0);
+  const isEnglish = computed(() => $i18n.locale.value === 'en');
 
   // --- Methods ---
 
@@ -35,7 +37,7 @@ export const useCartStore = defineStore('cart', () => {
     toast.add({
       id: product.id,
       icon: isAdded ? 'icon-park-solid:shopping-cart-add' : 'icon-park-solid:shopping-cart-del',
-      title: `${product.title}`,
+      title: isEnglish.value ? product.title.en : product.title.ar,
       description: isAdded ? translate('cart.add_msg') : translate('cart.remove_msg'),
       color: isAdded ? 'primary' : 'warning',
       type: 'foreground',

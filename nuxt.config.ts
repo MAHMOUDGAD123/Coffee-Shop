@@ -32,6 +32,28 @@ export default defineNuxtConfig({
       type: 'transition',
       name: 'fade',
     },
+    head: {
+      link: [
+        {
+          rel: 'preload',
+          href: '/fonts/Quicksand.woff2',
+          as: 'font',
+          type: 'font/woff2',
+          fetchpriority: 'high',
+          tagPriority: 'high',
+          crossorigin: 'anonymous',
+        },
+        {
+          rel: 'preload',
+          href: '/fonts/Cairo.woff2',
+          as: 'font',
+          type: 'font/woff2',
+          fetchpriority: 'high',
+          tagPriority: 'high',
+          crossorigin: 'anonymous',
+        },
+      ],
+    },
   },
 
   $development: {
@@ -87,6 +109,7 @@ export default defineNuxtConfig({
       collections: [
         'qlementine-icons',
         'simple-icons',
+        'icon-park-solid',
         'ph',
         'bi',
         'fa',
@@ -98,6 +121,7 @@ export default defineNuxtConfig({
         'teenyicons',
         'fa6-solid',
         'fa7-solid',
+        'fa7-brands',
         'fa7-regular',
         'fa-regular',
         'material-symbols',

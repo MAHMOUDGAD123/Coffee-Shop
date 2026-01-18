@@ -1,6 +1,6 @@
 interface ServerUserInfo {
   cart: string[];
-  filter: FilterCategory;
+  filter: CategoryFilter;
   language: Language;
 }
 

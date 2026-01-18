@@ -28,7 +28,7 @@
         class="thumbnail-btn h-24 overflow-hidden rounded-md border-2 transition hover:opacity-75"
         :class="activeImage === image ? 'border-amber-600' : 'border-transparent'"
       >
-        <img :src="image" class="h-full w-full object-cover" />
+        <img loading="lazy" :src="image" class="h-full w-full object-cover" />
       </button>
     </div>
   </div>
