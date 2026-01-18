@@ -18,7 +18,7 @@ export const useLanguageStore = defineStore('language', () => {
       loading.value = true;
       await setLocale(lang);
       await updateAPILanguage(lang);
-      loading.value = true;
+      loading.value = false;
 
       useHead({
         htmlAttrs: {
