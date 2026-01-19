@@ -46,11 +46,7 @@
 </script>
 
 <template>
-  <USlideover
-    v-model:open="cartSliderOpen"
-    :side="sliderSide"
-    :ui="{ footer: 'justify-end', title: 'uppercase' }"
-  >
+  <USlideover v-model:open="cartSliderOpen" :side="sliderSide" :ui="{ title: 'uppercase' }">
     <UTooltip :text="$t('text.cart')">
       <UChip
         size="3xl"
@@ -81,27 +77,30 @@
 
     <template #body>
       <div v-if="!cartEmpty" class="my-5 flex flex-col gap-3">
-        <UButton
+        <div
           v-for="item in cartItems"
-          :to="{ name: 'product', params: { product_id: item.id } }"
-          variant="subtle"
-          class="flex items-center gap-5"
+          class="bg-accented flex items-center gap-5 rounded-xl px-3 py-2.5"
         >
-          <div>
+          <ULink
+            :to="{ name: 'product', params: { product_id: item.id } }"
+            class="aspect-square max-w-15"
+          >
             <img
               :src="imagesMap[item.category.en]"
               loading="lazy"
               alt="coffee"
-              class="aspect-square w-30"
+              class="object-cover"
             />
-          </div>
+          </ULink>
 
-          <div class="flex flex-col gap-1 text-start">
-            <h5 class="font-solid text-lg">
-              {{ isEnglish ? item.shortName.en : item.shortName.ar }}
-            </h5>
+          <div class="flex flex-col text-start">
+            <ULink :to="{ name: 'product', params: { product_id: item.id } }">
+              <h5 class="line-clamp-1 font-bold">
+                {{ isEnglish ? item.shortName.en : item.shortName.ar }}
+              </h5>
+            </ULink>
 
-            <p class="text-dimmed line-clamp-2">
+            <p class="text-dimmed line-clamp-2 text-sm">
               {{ isEnglish ? item.description.en : item.description.ar }}
             </p>
 
@@ -117,7 +116,7 @@
               </UTooltip>
             </div>
           </div>
-        </UButton>
+        </div>
       </div>
 
       <UEmpty

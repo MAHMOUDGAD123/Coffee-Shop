@@ -12,8 +12,9 @@
 
 <template>
   <UContainer
-    class="relative mt-20 mb-30 grid min-h-130 grid-cols-1 items-center gap-15 text-center lg:grid-cols-2 lg:text-start"
+    class="relative mt-20 mb-30 grid grid-cols-1 items-center text-center lg:min-h-130 lg:grid-cols-2 lg:gap-15 lg:text-start"
   >
+    <!-- Shape -->
     <div
       class="hero-shape absolute -top-100 -z-1 h-200 w-500 rounded-full lg:-top-90"
       :class="{
@@ -22,10 +23,11 @@
       }"
     ></div>
 
-    <div class="flex flex-col gap-9 lg:ps-10">
+    <!-- Hero Text -->
+    <div class="flex h-full flex-col justify-center gap-9 lg:ps-10">
       <h1
-        class="hero text-primary letter-spacing xsm:text-8xl flex flex-col text-6xl font-extrabold select-none"
-        :class="{ 'leading-27': !isEnglish }"
+        class="hero text-primary xsm:text-8xl flex flex-col text-6xl font-extrabold select-none"
+        :class="{ 'xsm:leading-27 leading-20': !isEnglish }"
       >
         <span class="whitespace-nowrap">
           <span class="relative">
@@ -76,6 +78,7 @@
       </div>
     </div>
 
+    <!-- Carousel -->
     <ClientOnly>
       <div dir="ltr" v-if="isLargeScreen">
         <UiHeroCarousel />

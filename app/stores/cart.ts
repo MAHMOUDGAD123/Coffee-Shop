@@ -70,7 +70,7 @@ export const useCartStore = defineStore('cart', () => {
       })),
     };
 
-    await $fetch('/api/cart/clear', { method: 'POST' });
+    $fetch('/api/cart/clear', { method: 'POST' });
 
     // toast.clear();
     // toast.add({

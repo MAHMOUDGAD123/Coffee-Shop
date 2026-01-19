@@ -3,7 +3,10 @@
 
   const isSmallScreen = useMediaQuery('(width >= 640px)');
   const windowScroll = useWindowScroll({
-    throttle: 100,
+    throttle: 50,
+    onScroll() {
+      createLogger().success(windowScroll.y.value);
+    },
   });
 
   // --- Computed ---

@@ -42,7 +42,7 @@ export const useLanguageStore = defineStore('language', () => {
   // --- Methods ---
 
   async function updateAPILanguage(lang: Language) {
-    await $fetch('/api/preferences/language', {
+    $fetch('/api/preferences/language', {
       method: 'POST',
       body: {
         lang: lang,
