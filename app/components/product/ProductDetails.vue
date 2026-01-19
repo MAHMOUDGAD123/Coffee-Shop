@@ -6,12 +6,9 @@
     averageRating: number;
   }>();
 
-  // --- Data & Stores ---
-
-  const cartStore = useCartStore();
-
   // --- State ---
 
+  const cartStore = useCartStore();
   const { locale } = useI18n();
 
   // --- Computed ---
@@ -26,11 +23,6 @@
 
   const toggleItemInCart = () => {
     cartStore.toggleCartItem(product, product.cartCount);
-  };
-
-  const handleCountChange = () => {
-    if (!product.inCart) return;
-    cartStore.updateItemCartCount(product, product.cartCount);
   };
 </script>
 
@@ -81,15 +73,9 @@
 
     <!-- Actions -->
     <div class="flex flex-col items-center gap-4 sm:flex-row">
-      <div class="w-full sm:w-32">
-        <UInputNumber
-          v-model="product.cartCount"
-          @change="handleCountChange"
-          variant="outline"
-          class="w-full"
-          :min="1"
-        />
-      </div>
+      <!-- <div class="w-full sm:w-32"> -->
+      <ProductCartInputNumber :product class="w-full sm:w-45" />
+      <!-- </div> -->
 
       <UButton
         @click="toggleItemInCart"

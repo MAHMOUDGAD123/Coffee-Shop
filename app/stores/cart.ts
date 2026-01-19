@@ -46,8 +46,8 @@ export const useCartStore = defineStore('cart', () => {
     });
   };
 
-  const updateItemCartCount = useDebounceFn((product: ProductWithMetaData, count: number) => {
-    product.cartCount = count;
+  const updateItemCartCount = (product: ProductWithMetaData, count: number) => {
+    // product.cartCount = count;
 
     $fetch('/api/cart/add', {
       method: 'POST',
@@ -56,7 +56,7 @@ export const useCartStore = defineStore('cart', () => {
         count,
       },
     });
-  }, 1000);
+  };
 
   const clearCart = async () => {
     if (cartEmpty.value) return;

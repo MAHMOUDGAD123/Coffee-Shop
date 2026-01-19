@@ -4,6 +4,7 @@
   import coffeeImg from '~/assets/imgs/coffee.webp';
   import equipmentImg from '~/assets/imgs/equipment.webp';
   import roastingImg from '~/assets/imgs/roasting.webp';
+  import ProductCartInputNumber from '../product/ProductCartInputNumber.vue';
 
   // --- Types ---
 
@@ -96,41 +97,26 @@
           </div>
 
           <div class="flex flex-col gap-1 text-start">
-            <div class="flex items-center gap-3">
-              <span class="font-solid text-lg">
-                {{ isEnglish ? item.shortName.en : item.shortName.ar }}
-              </span>
-              <span class="bg-accent-base rounded-2xl px-2 text-white">{{
-                $n(item.cartCount, 'integer')
-              }}</span>
-            </div>
+            <h5 class="font-solid text-lg">
+              {{ isEnglish ? item.shortName.en : item.shortName.ar }}
+            </h5>
 
             <p class="text-dimmed line-clamp-2">
               {{ isEnglish ? item.description.en : item.description.ar }}
             </p>
 
-            <UInputNumber
-              variant="outline"
-              size="sm"
-              v-model="item.cartCount"
-              @change="
-                () => {
-                  cartStore.updateItemCartCount(item, item.cartCount);
-                }
-              "
-              class="w-30"
-              :min="1"
-            />
+            <div class="mt-1 flex items-center gap-4">
+              <ProductCartInputNumber orientation="vertical" :product="item" class="w-25" />
+              <UTooltip :text="$t('text.remove')">
+                <UButton
+                  icon="fa7-solid:trash"
+                  variant="solid"
+                  color="secondary"
+                  @click="() => cartStore.toggleCartItem(item, item.cartCount)"
+                />
+              </UTooltip>
+            </div>
           </div>
-
-          <UTooltip :text="$t('text.remove')">
-            <UButton
-              icon="fa7-solid:trash"
-              variant="solid"
-              color="secondary"
-              @click="() => cartStore.toggleCartItem(item, 1)"
-            />
-          </UTooltip>
         </UButton>
       </div>
 
