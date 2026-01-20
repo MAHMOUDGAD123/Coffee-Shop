@@ -8,9 +8,9 @@ const openNewSession = async (event: H3Event<EventHandlerRequest>): Promise<Serv
   }
 
   const newUserInfo: ServerUserInfo = {
-    cart: [],
     filter: 'all',
     language: 'en',
+    cart: {},
   };
 
   await authSession.update({
