@@ -4,6 +4,9 @@ export default defineEventHandler(async (ev) => {
 
   ev.node.res.on('finish', async () => {
     console.log('\n');
-    createLogger({ tag: 'SESSION' })!.log(`[${authSession.id}]`, JSON.stringify(authSession.data));
+    createLogger({ tag: 'SESSION' })!.log(
+      `[${authSession.id ?? '---'}]`,
+      JSON.stringify(authSession.data),
+    );
   });
 });

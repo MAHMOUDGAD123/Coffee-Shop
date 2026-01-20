@@ -8,7 +8,7 @@ export default defineEventHandler(async (ev) => {
   await authSession.update({
     user: {
       ...authSession.data.user,
-      cart: [],
+      cart: {},
     },
   });
 

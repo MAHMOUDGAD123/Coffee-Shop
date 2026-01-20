@@ -10,20 +10,12 @@ export default defineEventHandler(async (ev) => {
     return authSession.data.user;
   }
 
-  const oldCart = authSession.data.user.cart;
-  const newCart: CartItems = {};
-
-  // Exclude the target item from the cart object
-  for (const id in oldCart) {
-    if (id !== productId) {
-      newCart[id] = oldCart[id];
-    }
-  }
+  const { [productId]: removedItem, ...newCart } = authSession.data.user.cart;
 
   await authSession.update({
     user: {
       ...authSession.data.user,
-      cart: newCart,
+      cart: { ...newCart },
     },
   });
 
